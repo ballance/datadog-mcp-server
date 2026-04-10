@@ -1,0 +1,13 @@
+{
+  "name": "datadog-mcp-server",
+  "version": "1.0.0",
+  "description": "Datadog MCP server for querying logs, metrics, traces, and monitors",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1"
+  }
+}
