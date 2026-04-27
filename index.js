@@ -39,7 +39,7 @@ server.tool(
   "search_logs",
   "Search Datadog logs by query, service, time range. Uses Datadog log search syntax.",
   {
-    query: z.string().describe("Datadog log search query (e.g. 'service:gw-realtime status:error')"),
+    query: z.string().describe("Datadog log search query (e.g. 'service:web-app status:error')"),
     from: z.string().optional().describe("Start time — ISO-8601 or relative like 'now-1h' (default: now-15m)"),
     to: z.string().optional().describe("End time — ISO-8601 or relative like 'now' (default: now)"),
     limit: z.number().optional().describe("Max results to return (default: 25, max: 100)"),
@@ -81,7 +81,7 @@ server.tool(
   "query_metrics",
   "Query Datadog time series metrics. Returns data points for a metric query.",
   {
-    query: z.string().describe("Datadog metrics query (e.g. 'avg:system.cpu.user{service:gw-realtime}')"),
+    query: z.string().describe("Datadog metrics query (e.g. 'avg:system.cpu.user{service:web-app}')"),
     from: z.number().optional().describe("Start time as Unix epoch seconds (default: 1 hour ago)"),
     to: z.number().optional().describe("End time as Unix epoch seconds (default: now)"),
   },
@@ -117,7 +117,7 @@ server.tool(
   "search_traces",
   "Search Datadog APM traces/spans by service, resource, or error status.",
   {
-    query: z.string().describe("Trace search query (e.g. 'service:gw-realtime @http.status_code:500')"),
+    query: z.string().describe("Trace search query (e.g. 'service:web-app @http.status_code:500')"),
     from: z.string().optional().describe("Start time — ISO-8601 or relative like 'now-1h' (default: now-15m)"),
     to: z.string().optional().describe("End time — ISO-8601 or relative like 'now' (default: now)"),
     limit: z.number().optional().describe("Max results (default: 25, max: 50)"),
@@ -162,7 +162,7 @@ server.tool(
   "List Datadog monitors, optionally filtered by name, tag, or status.",
   {
     name: z.string().optional().describe("Filter monitors by name substring"),
-    tags: z.string().optional().describe("Comma-separated tags to filter by (e.g. 'service:gw-realtime,env:prod')"),
+    tags: z.string().optional().describe("Comma-separated tags to filter by (e.g. 'service:web-app,env:prod')"),
     monitor_tags: z.string().optional().describe("Comma-separated monitor tags to filter by"),
   },
   async ({ name, tags, monitor_tags }) => {

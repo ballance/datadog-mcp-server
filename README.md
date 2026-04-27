@@ -47,8 +47,8 @@ Get your App key from: https://us5.datadoghq.com/organization-settings/applicati
 ## Example Queries
 
 ```
-search_logs: query="service:gw-realtime status:error" from="now-1h"
-query_metrics: query="avg:system.cpu.user{service:gw-realtime}"
-search_traces: query="service:gw-realtime @http.status_code:500" from="now-1h"
-list_monitors: tags="service:gw-realtime"
+search_logs: query="service:web-app status:error" from="now-1h"
+query_metrics: query="avg:system.cpu.user{service:web-app}"
+search_traces: query="service:web-app @http.status_code:500" from="now-1h"
+list_monitors: tags="service:web-app"
 ```
